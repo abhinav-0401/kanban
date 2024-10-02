@@ -3,7 +3,7 @@ import Card from '../Card/Card'
 
 let cardCount = 0;
 
-export default function List(props: any): JSX.Element {
+export default function List(props) {
     return (
         <>
             <div className="list-container">
@@ -74,7 +74,7 @@ export default function List(props: any): JSX.Element {
 
                 <div className="list-card-items">
                     {
-                        props.ticketDetails.map((ticket: any) => {
+                        props.ticketDetails.map((ticket) => {
                             if (ticket.status === props.listTitle) {
                                 cardCount++;
                                 return (<Card cardDetails={ticket} />)

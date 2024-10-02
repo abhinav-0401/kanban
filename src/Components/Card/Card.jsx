@@ -1,6 +1,6 @@
 import './Card.css'
 
-export default function Card(props: any): JSX.Element {
+export default function Card(props) {
     return (
         <>
             <div className="card-container">
@@ -26,7 +26,7 @@ export default function Card(props: any): JSX.Element {
                     }
 
                     {
-                        props.cardDetails.tag.map((tag: any) => {
+                        props.cardDetails.tag.map((tag) => {
                             return (
                                 <div className="card-tag-box">
                                     <div className="card-tag-title">{tag}</div>

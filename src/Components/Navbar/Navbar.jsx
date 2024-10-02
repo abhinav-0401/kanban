@@ -4,16 +4,16 @@ import downIcon from '../../Assets/Images/Down.svg'
 
 import './Navbar.css'
 
-export default function Navbar(props: any): JSX.Element {
+export default function Navbar(props) {
     const [toggleFilter, setToggleFilter] = useState(false);
 
-    function handleDisplayToggle(e: any) {
+    function handleDisplayToggle(e) {
         setToggleFilter(!toggleFilter);
         if (e.target.value !== undefined) {
             props.handleGroupValue(e.target.value);
         }
     }
-    function handleOrderingValue(e: any) {
+    function handleOrderingValue(e) {
         setToggleFilter(!toggleFilter);
         if (e.target.value !== undefined) {
             props.handleOrderValue(e.target.value);

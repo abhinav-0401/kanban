@@ -16,11 +16,11 @@ function App() {
   const [ticketDetails, setticketDetails] = useState([]);
 
 
-  const orderDataByValue = useCallback(async (cardsArry: any) => {
+  const orderDataByValue = useCallback(async (cardsArry) => {
     if (orderValue === 'priority') {
-      cardsArry.sort((a: any, b: any) => b.priority - a.priority);
+      cardsArry.sort((a, b) => b.priority - a.priority);
     } else if (orderValue === 'title') {
-      cardsArry.sort((a: any, b: any) => {
+      cardsArry.sort((a, b) => {
         const titleA = a.title.toLowerCase();
         const titleB = b.title.toLowerCase();
 
@@ -36,7 +36,7 @@ function App() {
     await setticketDetails(cardsArry);
   }, [orderValue, setticketDetails]);
 
-  function saveStateToLocalStorage(state: any) {
+  function saveStateToLocalStorage(state) {
     localStorage.setItem('groupValue', JSON.stringify(state));
   }
 
@@ -56,7 +56,7 @@ function App() {
 
     }
     fetchData();
-    async function refactorData(response: any) {
+    async function refactorData(response) {
       let ticketArray = []
       if (response.status === 200) {
         for (let i = 0; i < response.data.tickets.length; i++) {
@@ -74,12 +74,12 @@ function App() {
 
   }, [orderDataByValue, groupValue])
 
-  function handleGroupValue(value: any) {
+  function handleGroupValue(value) {
     setgroupValue(value);
     console.log(value);
   }
 
-  function handleOrderValue(value: any) {
+  function handleOrderValue(value) {
     setorderValue(value);
     console.log(value);
   }
